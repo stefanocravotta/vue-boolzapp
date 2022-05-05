@@ -55,9 +55,9 @@
 
         <div class="central-aside">
           
-          <div v-for="user in users" class="box">
+          <div v-for="user in users" class="box-aside">
 
-            <img src="assets/img/avatar_1.jpg" alt="">
+            <img :src="'assets/img/' + 'avatar' + user.avatar + '.jpg'" alt="">
 
             <div class="messaggio">
               <div class="nome">{{user.name}}</div>
@@ -86,7 +86,24 @@
           </div>
         </div>
 
-        <div class="central-main"></div>
+        <div class="central-main">
+
+          <div class="box-send">
+            <span>Hai portato a spasso il cane? </span>
+            <span id="time-in-message">15:30</span>
+          </div>
+
+          <div class="box-received">
+            <span>Si ci sono andato prima..</span>
+            <span id="time-in-message">15:46</span>
+          </div>
+          <div class="box-received">
+            <span>Ci ordiniamo una pizza?</span>
+            <span id="time-in-message">15:46</span>
+          </div>
+          
+
+        </div>
 
         <div class="bottom-main">
 

@@ -170,5 +170,16 @@ const app = new Vue({
   },
 
   methods: {
+
+    cicloMessages(users){
+        let text = []
+        let message;
+        for(let user in users){
+            for(let message in user.message);
+            text.push(message);
+        }
+        
+        return text;
+    }
   },
 }) 

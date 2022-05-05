@@ -151,31 +151,31 @@ font-size: .7rem;
   border-right: 1px solid lightgray;
   overflow-y: scroll;
 }
-#left .central-aside .box{
+#left .central-aside .box-aside{
   position: relative;
   width: 100%;
   height: 50px;
   padding: 10px;
   border-bottom: 1px solid rgba(211, 211, 211, 0.479);
 }
-#left .central-aside .box img{
+#left .central-aside .box-aside img{
   float: left;
   width: 35px;
   border-radius: 50%;
 }
-#left .central-aside .box .messaggio{
+#left .central-aside .box-aside .messaggio{
   float: left;
   padding-left: 10px;
 }
-#left .central-aside .box .messaggio .nome{
+#left .central-aside .box-aside .messaggio .nome{
   font-size: .8rem;
 }
-#left .central-aside .box .messaggio .testo-messaggio{
+#left .central-aside .box-aside .messaggio .testo-messaggio{
   padding-top: 5px;
   font-size: .6rem;
   color: rgb(179, 176, 176);
 }
-#left .central-aside .box .orario{
+#left .central-aside .box-aside .orario{
   position: absolute;
   right: 10px;
   top: 10px;
@@ -192,6 +192,7 @@ main .top-main{
   background-color: rgb(234, 234, 234);
 }
 main .top-main .top-main-left{
+  padding: 0 10px;
   float: left;
 }
 main .top-main .top-main-left img{
@@ -218,10 +219,42 @@ main .top-main .top-main-right i{
 
 
 main .central-main{
-height: calc(100% - 90px);
-background-image: url(../img/mine.jpg);
-overflow-y: scroll;
+  height: calc(100% - 90px);
+  background-image: url(../img/mine.jpg);
+  overflow-y: scroll;
+  padding: 30px;
 }
+main .central-main .box-send{
+  float: right;
+  position: relative;
+  padding: 10px 30px;
+  width: calc(100% - 60%);
+  border-radius: 10px;
+  margin-top: 10px;
+  margin-left: 70%;
+  background-color: rgb(214, 248, 188);
+  font-size: .7rem;
+}
+main .central-main .box-received{
+  float: left;
+  position: relative;
+  padding: 10px 20px;
+  width: calc(100% - 60%);
+  border-radius: 10px;
+  margin-top: 10px;
+  margin-right: 70%;
+  background-color: white;
+  font-size: .7rem;
+}
+
+main .central-main #time-in-message{
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+  font-size: .4rem;
+  color: rgb(179, 176, 176)
+}
+
 
 /* BOTTOM MAIN */
 
@@ -241,4 +274,8 @@ main .bottom-main input{
   padding: 0 10px;
   border: none;
   border-radius: 5px;
+}
+
+main .bottom-main i{
+  color: rgb(151, 150, 150)
 }
