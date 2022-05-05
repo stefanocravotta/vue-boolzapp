@@ -1,0 +1,141 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+/* utils */
+
+.clearfix::after{
+  content: "";
+  display: table;
+  clear: both;
+}
+
+#app{
+  height: 100vh;
+}
+
+.top-back{
+  height: 20%;
+  background-color: rgb(21, 149, 136);
+}
+.middle-back{
+  height: 80%;
+  background-color: rgb(218, 219, 212);
+}
+.container{
+  position: absolute;
+  background-color: rgba(187, 62, 62, 0.473);
+  top: 20px;
+  left: 50px;
+  bottom: 20px;
+  right: 50px;
+}
+
+aside#left{
+  float: left;
+  width: 35%;
+  height: 100%;
+  background-color: white;
+}
+
+main{
+  float: left;
+  width: 65%;
+  height: 100%;
+  background-color: white;
+}
+
+/* aside */
+
+/* LEFT-TOP ASIDE */
+
+#left .top-aside{
+  height: 40px;
+  background-color: rgb(234, 234, 234);
+  border-right: 1px solid lightgray;
+}
+
+#left .top-aside .left-top-aside{
+  float: left;
+  padding: 0 10px;
+}
+
+#left .top-aside .left-top-aside img{
+  width: 30px;
+  vertical-align: middle;
+  border-radius: 20px;
+}
+#left .top-aside .left-top-aside span{
+line-height: 40px;
+font-size: .7rem;
+}
+
+#left .top-aside .right-top-aside{
+  float: right;
+  line-height: 40px;
+  padding: 0 10px;
+}
+#left .top-aside .right-top-aside i{
+  padding: 0 4px;
+  font-size: .9rem;
+  color: rgb(177, 177, 177);
+}
+
+/* BANNER NOTIFICHE */
+
+#left .banner-notifiche{
+  height: 50px;
+  background-color: rgb(145, 218, 250);
+}
+#left .banner-notifiche .centro-notifiche{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 10px;
+}
+#left .banner-notifiche .icona-notifica{
+  height: 35px;
+  width: 35px;
+  margin-right: 10px;
+  text-align: center;
+  line-height: 40px;
+  background-color: white;
+  color: rgb(145, 218, 250);
+  border-radius: 50%;
+}
+#left .banner-notifiche .centro-notifiche .text-notifiche p{
+  font-size: .7rem;
+}
+#left .banner-notifiche .centro-notifiche .text-notifiche a{
+  font-size: .6rem;
+  color: rgb(134, 133, 133);
+}
+
+/* CENTRAL ASIDE */
+
+#left .central-aside{
+  height: calc(100% - 90px);
+  border-right: 1px solid lightgray;
+  overflow-y: scroll;
+}
+
+/* main */
+main .top-main{
+  height: 40px;
+  background-color: rgb(234, 234, 234);
+}
+
+main .central-main{
+height: calc(100% - 90px);
+background-image: url(../img/mine.jpg);
+overflow-y: scroll;
+}
+
+main .bottom-main{
+  height: 50px;
+  background-color: rgba(234, 234, 234, .4);
+
+}
