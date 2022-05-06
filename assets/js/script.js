@@ -183,7 +183,7 @@ const app = new Vue({
     addNewMessage(){
         
         const nuovoMessaggio = {
-           date: '10/01/2020 00:00:00',
+           date: this.nowDate(),
            message: this.inputMessage,
            status: 'sent'
         };
@@ -193,7 +193,7 @@ const app = new Vue({
         
         setTimeout(() => {
             const rispostaMessaggio = {
-                date: '10/01/2020 00:00:00',
+                date: this.nowDate(),
                 message: 'OK !!!',
                 status: 'received'
              };
@@ -218,6 +218,57 @@ const app = new Vue({
         this.activeMessage = index
         console.log(this.activeMessage);
         this.showMenu = !this.showMenu
+    },
+
+    nowDate(){
+        const now = new Date();
+        console.log(now);
+        let fullYear = now.getFullYear();
+        let month = now.getMonth();
+        let day = now.getDay();
+        let hour = now.getHours();
+        let minute = now.getMinutes();
+        let second = now.getSeconds();
+        let controlloMese = "";
+        let controlloGiorno = "";
+        let controlloOra = "";
+        let controlloMinuti = "";
+        let controlloSecondi = "";
+
+        if(month + 1 < 10){
+            controlloMese = '0' + (month + 1);
+        }else{
+            controlloMese = month + 1
+        }
+
+        if(day + 1 < 10){
+            controlloGiorno = '0' + (day + 1);
+        }else{
+            controlloGiorno = day + 1
+        }
+
+        if(hour < 10){
+            controlloOra = '0' + (hour);
+        }else{
+            controlloOra = hour
+        }
+        
+        if(minute < 10){
+            controlloMinuti = '0' + (minute);
+        }else{
+            controlloMinuti = minute
+        }
+
+        if(second < 10){
+            controlloSecondi = '0' + (second);
+        }else{
+            controlloSecondi = second
+        }
+
+        console.log(controlloMese);
+        let global = `${controlloGiorno}/${controlloMese}/${fullYear} ${controlloOra}:${controlloMinuti}:${controlloSecondi}`;
+        console.log(fullYear);
+        return global
     }
   }
 }) 
