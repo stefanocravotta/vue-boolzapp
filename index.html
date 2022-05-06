@@ -18,8 +18,8 @@
         <div class="top-aside clearfix">
 
           <div class="left-top-aside">
-            <img src="assets/img/avatar_io.jpg" alt="">
-            <span>Sofia</span>
+            <img :src="`assets/img/avatar${personalUser.avatar}.jpg`" alt="personalUser.name">
+            <span>{{personalUser.name}}</span>
           </div>
 
           <div class="right-top-aside">
@@ -75,7 +75,7 @@
         <div class="top-main clearfix">
 
           <div class="top-main-left">
-            <img :src="'assets/img/' + 'avatar' + users[activeUser].avatar + '.jpg'" alt="">
+            <img :src="`assets/img/avatar${users[activeUser].avatar}.jpg`" alt="">
             <span>{{users[activeUser].name}}</span>
           </div>
           <div class="top-main-right">
@@ -93,8 +93,8 @@
           :class="category.status">
 
             <span>{{category.message}}</span>
-            <span id="time-in-message">15:30</span>
-            
+            <span id="time-in-message">{{category.date}}</span>
+
           </div>
 
         </div>
@@ -102,7 +102,7 @@
         <div class="bottom-main">
 
           <i class="fa-regular fa-face-smile"></i>
-          <input type="text" placeholder="Scrivi un messaggio">
+          <input v-model="inputMessage" @keyup.enter="addNewMessage()" type="text" placeholder="Scrivi un messaggio">
           <i class="fa-solid fa-microphone"></i>
         </div>
 

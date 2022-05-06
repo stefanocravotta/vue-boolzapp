@@ -4,6 +4,10 @@ const app = new Vue({
   el: '#app',
 
   data: {
+    personalUser: {
+        name: 'Stefano',
+        avatar: '_io',
+    },
     users: [
       {
           name: 'Michele',
@@ -168,9 +172,22 @@ const app = new Vue({
       }
   ],
   activeUser: 0,
+  inputMessage : "",
   },
 
   methods: {
     
+    addNewMessage(){
+        
+        const nuovoMessaggio = {
+           date: '10/01/2020 00:00:00',
+           message: this.inputMessage,
+           status: 'sent'
+        };
+    
+        this.users[this.activeUser].messages.push(nuovoMessaggio);
+        this.inputMessage = "";
+        
+    }
   },
 }) 
