@@ -47,13 +47,13 @@
 
         <div class="search-input">
           <i class="fa-solid fa-magnifying-glass"></i>
-          <input placeholder="Cerca o inizia una nuova chat" type="text">
+          <input v-model="inputSearch" placeholder="Cerca o inizia una nuova chat" type="text">
         </div>
 
         <div class="central-aside">
           
           <div 
-          v-for="(user,index) in users" @click="activeUser = index"
+          v-for="(user,index) in filteredList()" @click="activeUser = index"
           class="box-aside">
 
             <img :src="`assets/img/avatar${user.avatar}.jpg`" alt="user.name">

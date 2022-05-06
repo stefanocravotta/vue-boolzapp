@@ -173,6 +173,7 @@ const app = new Vue({
   ],
   activeUser: 0,
   inputMessage : "",
+  inputSearch : "",
   },
 
   methods: {
@@ -196,6 +197,13 @@ const app = new Vue({
              };
              this.users[this.activeUser].messages.push(rispostaMessaggio);
         }, 1000)
-    }
-  },
+    },
+    
+    filteredList() {
+        return this.users.filter(user => {
+          return user.name.toLowerCase().includes(this.inputSearch.toLowerCase())
+        })
+      }
+
+  }
 }) 
