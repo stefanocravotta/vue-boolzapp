@@ -188,6 +188,14 @@ const app = new Vue({
         this.users[this.activeUser].messages.push(nuovoMessaggio);
         this.inputMessage = "";
         
+        setTimeout(() => {
+            const rispostaMessaggio = {
+                date: '10/01/2020 00:00:00',
+                message: 'OK !!!',
+                status: 'received'
+             };
+             this.users[this.activeUser].messages.push(rispostaMessaggio);
+        }, 1000)
     }
   },
 }) 
