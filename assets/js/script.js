@@ -172,8 +172,10 @@ const app = new Vue({
       }
   ],
   activeUser: 0,
+  activeMessage: 0,
   inputMessage : "",
   inputSearch : "",
+  showMenu : false,
   },
 
   methods: {
@@ -203,7 +205,19 @@ const app = new Vue({
         return this.users.filter(user => {
           return user.name.toLowerCase().includes(this.inputSearch.toLowerCase())
         })
-      }
+    },
 
+    removeMessage(category, index){
+
+        console.log(category,index);
+        category.status = "d-none"
+    },
+
+    toggleMenu(index){
+        console.log(index);
+        this.activeMessage = index
+        console.log(this.activeMessage);
+        this.showMenu = !this.showMenu
+    }
   }
 }) 

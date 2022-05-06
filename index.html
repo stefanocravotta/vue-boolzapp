@@ -18,7 +18,7 @@
         <div class="top-aside clearfix">
 
           <div class="left-top-aside">
-            <img :src="`assets/img/avatar${personalUser.avatar}.jpg`" alt="personalUser.name">
+            <img :src="`assets/img/avatar${personalUser.avatar}.ico`" alt="personalUser.name">
             <span>{{personalUser.name}}</span>
           </div>
 
@@ -88,12 +88,18 @@
         <div class="central-main ">
 
           <div 
-          v-for="category in users[activeUser].messages" 
+          v-for="(category,indice) in users[activeUser].messages" 
           class="message"
           :class="category.status">
 
             <span>{{category.message}}</span>
             <span id="time-in-message">{{category.date}}</span>
+            <i @click="toggleMenu(indice)"
+            class="fa-solid fa-chevron-down "></i>
+            <div 
+            v-if="showMenu"
+            @click="removeMessage(category, indice)"
+            class="dropdown-content">Elimina messaggio</div>
 
           </div>
 

@@ -234,7 +234,9 @@ main .central-main .message{
   font-size: .7rem;
   cursor: pointer;
   clear: both;
-
+}
+main .central-main .message.d-none{
+  display: none;
 }
 main .central-main .message.sent{
   float: right;
@@ -250,8 +252,25 @@ main .central-main #time-in-message{
   font-size: .4rem;
   color: rgb(179, 176, 176)
 }
+main .central-main i{
+  position: absolute;
+  top: 5px;
+  right: 10px;
+}
 
-
+.dropdown-content {
+  position: absolute;
+  right: 5px;
+  bottom: -12px;
+  background-color: #f9f9f9;
+  min-width: 60px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+  z-index: 1;
+}
+.d-block{
+  display: block;
+}
 /* BOTTOM MAIN */
 
 
