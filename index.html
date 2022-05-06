@@ -11,10 +11,7 @@
 </head>
 <body>
 
-  <div id="app">
-    <div class="top-back"></div>
-    <div class="middle-back"></div>
-    <div class="container clearfix">
+  <div id="app" class="container">
 
       <aside id="left">
 
@@ -55,16 +52,18 @@
 
         <div class="central-aside">
           
-          <div v-for="user in users" class="box-aside">
+          <div 
+          v-for="(user,index) in users" @click="activeUser = index"
+          class="box-aside">
 
-            <img :src="'assets/img/' + 'avatar' + user.avatar + '.jpg'" alt="">
+            <img :src="`assets/img/avatar${user.avatar}.jpg`" alt="user.name">
 
             <div class="messaggio">
               <div class="nome">{{user.name}}</div>
               <div class="testo-messaggio">Ultimo messaggio inviato</div>
             </div>
 
-            <div class="orario">22:00</div>
+            <div class="date">2022/04/05 22:00</div>
           </div>
           
         </div>
@@ -76,8 +75,8 @@
         <div class="top-main clearfix">
 
           <div class="top-main-left">
-            <img src="assets/img/avatar_io.jpg" alt="">
-            <span>Sofia</span>
+            <img :src="'assets/img/' + 'avatar' + users[activeUser].avatar + '.jpg'" alt="">
+            <span>{{users[activeUser].name}}</span>
           </div>
           <div class="top-main-right">
             <i class="fa-solid fa-magnifying-glass"></i>
@@ -86,22 +85,17 @@
           </div>
         </div>
 
-        <div class="central-main">
+        <div class="central-main ">
 
-          <div class="box-send">
-            <span>Hai portato a spasso il cane? </span>
+          <div 
+          v-for="category in users[activeUser].messages" 
+          class="message"
+          :class="category.status">
+
+            <span>{{category.message}}</span>
             <span id="time-in-message">15:30</span>
+            
           </div>
-
-          <div class="box-received">
-            <span>Si ci sono andato prima..</span>
-            <span id="time-in-message">15:46</span>
-          </div>
-          <div class="box-received">
-            <span>Ci ordiniamo una pizza?</span>
-            <span id="time-in-message">15:46</span>
-          </div>
-          
 
         </div>
 
@@ -113,7 +107,7 @@
         </div>
 
       </main>
-    </div>
+    
   </div>
   
 
