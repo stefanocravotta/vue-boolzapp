@@ -60,10 +60,10 @@
 
             <div class="messaggio">
               <div class="nome">{{user.name}}</div>
-              <div class="testo-messaggio">Ultimo messaggio inviato</div>
+              <div class="testo-messaggio">{{lastMessage(user)}}</div>
             </div>
 
-            <div class="date">2022/04/05 22:00</div>
+            <div class="date">{{lastMessageDate(user)}}</div>
           </div>
           
         </div>
@@ -94,7 +94,7 @@
 
             <span>{{category.message}}</span>
             <span id="time-in-message">{{category.date}}</span>
-            <i @click="toggleMenu(indice)"
+            <i @click="toggleMenu()"
             class="fa-solid fa-chevron-down "></i>
             <div 
             v-if="showMenu"

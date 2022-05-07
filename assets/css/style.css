@@ -256,6 +256,7 @@ main .central-main i{
   position: absolute;
   top: 5px;
   right: 10px;
+  color: #afabab;
 }
 
 .dropdown-content {
@@ -265,11 +266,15 @@ main .central-main i{
   background-color: #f9f9f9;
   min-width: 60px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  border-radius: 10px;
   padding: 12px 16px;
   z-index: 1;
 }
 .d-block{
   display: block;
+}
+.dropdown-content:hover{
+  background-color: #afabab;
 }
 /* BOTTOM MAIN */
 

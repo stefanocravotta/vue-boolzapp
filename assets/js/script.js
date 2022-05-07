@@ -209,14 +209,11 @@ const app = new Vue({
 
     removeMessage(category, index){
 
-        console.log(category,index);
-        category.status = "d-none"
+        this.users[this.activeUser].messages.splice(index,1) 
+        console.log(this.users.messages);
     },
 
-    toggleMenu(index){
-        console.log(index);
-        this.activeMessage = index
-        console.log(this.activeMessage);
+    toggleMenu(){
         this.showMenu = !this.showMenu
     },
 
@@ -269,6 +266,24 @@ const app = new Vue({
         let global = `${controlloGiorno}/${controlloMese}/${fullYear} ${controlloOra}:${controlloMinuti}:${controlloSecondi}`;
         console.log(fullYear);
         return global
+    },
+
+    lastMessage(user){
+        if(user.messages.length - 1 >= 0){
+           return user.messages[user.messages.length - 1].message; 
+        }else{
+            return "Non ci sono messaggi nella conversazione"
+        }
+        
+    },
+
+    lastMessageDate(user){
+        if(user.messages.length - 1 >= 0){
+            return user.messages[user.messages.length - 1].date;
+         }else{
+             return ""
+         }
+        
     }
   }
 }) 
